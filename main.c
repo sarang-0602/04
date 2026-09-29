@@ -1,21 +1,17 @@
 #include <stdio.h>
 
 int main(int argc, char *argv[]) {
-    unsigned int x;
-    int b;
+    int sec;
+    int h, m, s;
 
-    printf("input a number : ");
-    scanf("%ui", &x);
+    printf("input the second : ");
+    scanf("%i", &sec);
 
-    for (b = 0; x != 0; x >>= 1)   
-    {
-        if (x & 1)                 
-        {
-            b++;                   
-        }
-    }
+    h = sec / 3600;          // 1시간 = 3600초
+    m = (sec % 3600) / 60;   // 시간을 빼고 남은 초 → 분
+    s = sec % 60;            // 60으로 나눈 나머지 → 초
 
-    printf("The result is : %i\n", b);
+    printf("The time for %i second is %i : %i : %i\n", sec, h, m, s);
 
     return 0;
 }
