@@ -1,16 +1,15 @@
 #include <stdio.h>
 
 int main(int argc, char *argv[]) {
-    int sec;        
-    int minute, second;
+    int year;
+    int isLeap;
 
-    printf("input the second : ");
-    scanf("%d", &sec);
+    printf("input the year :");
+    scanf("%i", &year);
 
-    minute = sec / 60;   
-    second = sec % 60;   
+    isLeap = (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
 
-    printf("the time is %d : %d\n", minute, second);
+    printf("is the year %i the leap year? : %i\n", year, isLeap);
 
     return 0;
 }
